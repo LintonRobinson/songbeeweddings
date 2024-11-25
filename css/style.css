@@ -56,6 +56,9 @@ a {
 html {
     scroll-behavior: smooth;
 }
+
+
+
 /* General container styling */
 .container {
     max-width: 1300px;
@@ -79,7 +82,7 @@ h1 {
 @media (max-width: 515px) {
     h1 {
         color: white;
-        font-size: 4rem;
+        font-size: 3.8rem;
         font-weight: 600;
         text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
         text-align: center;
@@ -266,6 +269,21 @@ li a:hover {
     justify-content: space-between;
 }
 
+@media (max-width: 1020px) {
+    .hero {
+        background-image: url('/images/hero-image-mobile.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1020px) {
+    .hero video {
+        display: none;
+    }
+}
+
 /* Hero content wrapper styling */
 .hero-content-wrapper {
     display: flex;
@@ -287,6 +305,8 @@ li a:hover {
 /* Hero subtext font size, color */
 .hero-subtext {
     font-size: 1.2rem;
+    display: inline-block;
+    padding: 0 10px;
     color: white;
 }
 
@@ -311,6 +331,11 @@ li a:hover {
     height: 20px; 
 }
 
+@media (max-width: 1020px) {
+    #songTwoctrl {
+        display: none;
+    }
+}
 
 /* Hero video styling */
 .hero video {
@@ -322,6 +347,13 @@ li a:hover {
     z-index: -2;
     object-fit: cover;
 }
+
+@media (max-width: 1020px) {
+    .hero video {
+        display: none;
+    }
+}
+
 
 /******************************************
 /* WHO WE ARE SECTION
@@ -345,7 +377,7 @@ li a:hover {
     justify-content: center;
     width: 50%;
     gap: 20px;
-    padding: 0 20px;
+    padding: 20px 20px;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -492,7 +524,17 @@ li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    
+}
+
+@media (max-width: 850px) {
+    .how-it-works {
+        padding: 100px 0;
+        background-image: url('/images/how-it-works-mobile-background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll;
+    }
 }
 
 
@@ -629,8 +671,8 @@ li a:hover {
         max-width: 1300px;
         overflow: hidden;
         box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
-        background-image: url('/images/Before\ Background\ Image2.png');
-        background-attachment: fixed;
+        background-image: url('/images/sample-top-mobile-background.png');
+        background-attachment: scroll;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -669,6 +711,13 @@ li a:hover {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px); 
     transition: 0.5s;
+}
+
+@media (max-width: 850px) {
+    .music-player {
+        width: 100%;
+        margin: 0px;
+    }
 }
 
 .music-player:hover {
@@ -721,6 +770,14 @@ li a:hover {
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(105, 105, 105, 0.591);
     cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .controls div {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
 }
 
 .controls img {
@@ -821,8 +878,25 @@ li a:hover {
 @media (max-width: 850px) {
     .before-after-inside-wrapper {
         width: 100%;
+        background-image: url('/images/Before\ Background\ Image2.png');
+        background-attachment: scroll;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
+
+@media (max-width: 850px) {
+    .before-after-wrapper .before-after-inside-wrapper:nth-child(2) {
+        width: 100%;
+        background-image: url('/images/after-mobile-background.png');
+        background-attachment: scroll;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
 
 /* Sample section before wrapper fixed background img styling */
 .before-video-wrapper {
@@ -1112,6 +1186,17 @@ li a:hover {
     background-attachment: fixed;
 }
 
+@media (max-width: 1020px) {
+    .cta {
+        padding: 120px 0;
+        background-image: url('/images/Get\ Started\ Section\ Background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+    }
+}
+
 /* Cta text wrapper styling */
 .cta-text-wrapper {
     color: white;
@@ -1257,7 +1342,7 @@ footer .container {
     margin-bottom: 30px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
     footer .container {
         display: flex;
         max-width: 500px;
@@ -1273,19 +1358,24 @@ footer .container {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
     .footer-column-wrapper {
         display: flex;
         width: 200px;
+        border: #FFFFFF solid 2px;
+        border-radius: 10px;
+        padding: 15px;
     }
 }
 
 
 
-
-@media (max-width: 700px) {
+@media (max-width: 715px) {
     .footer-about-us {
         max-width: 500px;
+        border: #FFC982 solid 2px;
+        border-radius: 10px;
+        padding: 15px;
     }
 }
 

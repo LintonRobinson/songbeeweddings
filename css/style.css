@@ -1,0 +1,1461 @@
+/******************************************
+/* BOX MODEL HACK
+/*******************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+/******************************************
+/* CLEAR FIX HACK
+/*******************************************/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* STYLE RESETS 
+/*******************************************/
+
+/* Remove all padding and margin, set font style */
+* {
+    font-family: Poppins;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove list item marker */
+ul , li {
+    list-style: none;
+}
+
+/* Remove underline from link */
+
+a {
+    text-decoration: none !important;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+:root {
+    --gold: #FFC982;
+    --lightblack: #444444;
+    --white: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* General container styling */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+/* h1 styling */
+h1 {
+    color: white;
+    font-size: 6rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
+    text-align: center;
+}
+
+@media (max-width: 515px) {
+    h1 {
+        color: white;
+        font-size: 4rem;
+        font-weight: 600;
+        text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
+        text-align: center;
+    }
+}
+/* h2 styling */
+h2 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
+    text-align: center;
+}
+
+/* h3 styling */
+h3 {
+    font-size: 1.5rem;
+    color: var(--lightblack);
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
+}
+
+/* h4 styling */
+h4 {
+    color: #FFC982;
+    display: inline-block;
+    align-self: start;
+    border-bottom: solid 2px #FFC982;
+    margin-bottom: 10px;
+}
+
+/* h5 styling */
+h5 {
+    color: #FFC982;
+    display: inline-block;
+    border-bottom: #ffffff solid 2px;
+    margin-bottom: 15px; 
+}
+
+/* Header, Hero Children (White text) */
+header * , .hero * {
+    color: white;
+}
+
+/******************************************
+/* NAV BAR
+/*******************************************/
+/* Header styling */
+header {
+    position: sticky;
+    z-index: 5;
+    top: 0px;
+    width: 100vw;
+    box-shadow: 0px -4px 3px 1px rgba(133,133,133,0.35);
+    background-color: rgb(26, 26, 26);
+
+}
+
+/* Nav styling */
+nav {
+    height: 100%;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+@media (max-width: 1020px) {
+    .nav-right ul, .nav-right a {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: inline-block;
+        width: 24px;
+    }
+}
+
+/* Nav bar image styling */
+nav img {
+    display: block;
+    max-width: 125px;
+    width: auto;
+    height: auto;
+}
+
+/* Nav bar container styling */
+nav .container {
+    padding: 15px 50px;
+    max-width: 1350px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Nav bar right styling */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Nab bar ul styling */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+/* Nav bar How It Works anchor (link) right border */
+nav ul li:first-child {
+    border-right: solid white 2px;
+    padding-right: 15px ;
+}
+
+
+.full-screen-mobile-menu-wrapper {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 200px;
+    padding-bottom: 20px !important;
+    position: sticky;
+    background-color: rgb(26, 26, 26);
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.full-screen-mobile-menu-wrapper.full-screen-mobile-menu-wrapper-hidden {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 0px;
+    padding-bottom: 0 !important;
+    position: sticky;
+    background-color: rgb(26, 26, 26);
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.nav-dropdown-mobile {
+    display: flex;
+    flex-direction: column;
+   width: 100%;
+    gap: 30px;
+    padding-bottom: 20px !important; 
+}
+
+.nav-dropdown-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-dropdown-mobile .btn:hover {
+    background-color: #FFC982
+}
+
+/* Footer link styling */
+li a {
+    color: #ffffff;
+    transition: color 0.5s;
+}
+
+li a:hover {
+    color: #FFC982;
+    transition: color 0.5s;
+}
+
+/******************************************
+/* HERO SECTION
+/*******************************************/   
+
+/* Hero section styling */
+.hero {
+    position: relative;
+    top: -92.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hero content wrapper styling */
+.hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    width: 100vw;
+    min-height: 739px;
+}
+
+/* Hero subtext styling */
+.hero-content-wrapper span {
+    text-shadow: 2px 2px 5px rgba(55, 55, 55, 0.549);
+    text-align: center;
+}
+
+/* Hero subtext font size, color */
+.hero-subtext {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Hero bottom text wrapper styling */
+.bottom-text-wrapper {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 15px 20px;
+}
+
+/* Hero bottom text right styling (with image) */
+.bottom-text-wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sound-on  {
+    width: 20px;
+    height: 20px; 
+}
+
+
+/* Hero video styling */
+.hero video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    object-fit: cover;
+}
+
+/******************************************
+/* WHO WE ARE SECTION
+/*******************************************/  
+/* Who we are section styling */
+.who-we-are {
+    padding-bottom: 20px;
+}
+
+/* Who we are container styling */
+.who-we-are .container  {
+    display: flex;
+    position: relative;
+    top: -40px;
+}
+
+/* Who we are left styling */
+.who-we-are-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    gap: 20px;
+    padding: 0 20px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+}
+
+@media (max-width: 850px) {
+    .who-we-are-left-text-wrapper {
+        text-align: center;
+    }
+}
+
+/* Who we are h3 styling */
+.who-we-are-left h3 {
+    text-align: left ;
+    text-shadow: none;
+    font-size: 1.7rem;
+}
+
+.who-we-are-left ul {
+    display: flex; 
+    flex-direction: column;
+    justify-content: left;
+    gap: 10px;
+}
+
+
+
+
+@media (max-width: 850px) {
+    .who-we-are-left h3 {
+        text-align: center ;
+        text-shadow: none;
+    }
+}
+
+/* Who we are img wrapper styling */
+.who-we-are-img-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+@media (max-width: 850px) {
+    .who-we-are-img-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+}
+
+@media (max-width: 10800px) {
+    .who-we-are-img-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+}
+
+/* Who we are img styling */
+.who-we-are-img-wrapper img  {
+    width: 100%;
+}
+
+/* Who we are right styling */
+.who-we-are-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    width: 50%;
+    padding: 0 20px;
+}
+
+@media (max-width: 850px) {
+    .who-we-are-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 25px;
+        width: 80%;
+        padding: 0 20px;
+    }
+}
+
+/* Who we are list wrapper styling */
+.who-we-are-list-wrapper {
+    display: flex;
+    justify-content: start;
+    gap: 100px;
+    padding: 20px;
+    
+    border-radius: 10px;
+    background: #ffc982cf;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+
+}
+
+.who-we-are-list-wrapper li {
+    margin-bottom: 15px;
+    list-style: none;
+    font-weight: 600;
+}
+
+
+/* Who we are list wrapper children styling */
+.who-we-are-list-wrapper * {
+    list-style: inside;
+}
+
+@media (max-width: 850px) {
+    .who-we-are .container  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .who-we-are-left {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .who-we-are-list-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+
+
+/******************************************
+/* HOW IT WORKS SECTION
+/*******************************************/  
+/* How it works section styling */
+.how-it-works {
+    padding: 100px 0;
+    background-image: url('/images/how\ it\ works\ background\ image.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    
+}
+
+
+/* How it works container styling */
+.how-it-works .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+}
+
+/* How it works card wrapper styling */
+.how-it-works-card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* How it works card styling */
+.how-it-works-card {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    width: 30%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    border: solid 2px white;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.22);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    transition: 0.5s;
+}
+
+.how-it-works-card-1:hover, .how-it-works-card-2:hover, .how-it-works-card-3:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 2;
+}
+
+
+/* How it works card title styling */
+.how-it-works-card span {
+    display: block;
+    font-size: 1rem;
+    border-bottom: solid 2px #FFC982;
+    padding-bottom: 5px;
+}
+
+
+/* How it works card img styling */
+.how-it-works-card-img {
+    width: 40%;
+    
+} 
+
+
+@media (max-width: 850px) {
+    .how-it-works-card-wrapper {
+        flex-direction: column;
+        width: 70%;
+        gap: 80px;
+    }
+    .how-it-works-card {
+        width: 100%;
+    }
+}
+
+
+/******************************************
+/* SAMPLE SECTION
+/*******************************************/   
+/* sample section (section) styling */
+.sample-section {
+    padding: 100px 0;
+}
+
+/* sample section container styling */
+.sample-section .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.098);
+    
+}
+
+.right-arrow {
+    display: none;
+}
+
+/* sample section top wrapper styling */
+.sample-top-wrapper {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1300px;
+    overflow: hidden;
+    box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+    background-image: url('/images/Before\ Background\ Image2.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover 
+}
+
+@media (min-width: 851px) {
+    .right-arrow {
+        display: inline-block;
+        color: white;
+        width: 5%;
+        height: 2%;
+        margin-right: 20px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .sample-top-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: space-between;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 1300px;
+        overflow: hidden;
+        box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+        background-image: url('/images/Before\ Background\ Image2.png');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        gap: 25px; 
+    }
+}
+
+/* sample section top wrapper (parent element has darker background for seperation styling) */
+@media (max-width: 850px) {
+    .sample-top-text {
+        text-align: center;
+    }
+}
+
+/* Sample section top text h4 styling */
+.sample-top-text h4 {
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+/* Sample section top text h4 styling */
+.sample-top-text p {
+    color: white;
+    max-width: 350px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 5px 20px;
+    margin-right: 20px;
+    gap: 5px;
+    border: #FFFFFF solid 2px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px); 
+    transition: 0.5s;
+}
+
+.music-player:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.music-player span {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.music-player span:nth-child(2) {
+    color: #FFC982;
+}
+
+#progress {
+    -webkit-appearance: none;
+    min-width: 100%;
+    height: 6px;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: var(--gold);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 6px solid #444444;
+    box-shadow: 0 5px 5px rgba(255, 255, 255, 0.22);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(105, 105, 105, 0.591);
+    cursor: pointer;
+}
+
+.controls img {
+    width: 70%;
+}
+
+.controls div:nth-child(2) {
+    transform: scale(1.2);
+    color: #FFFFFF;
+    background-color: #FFC982;
+}
+
+.play-pause-btn {
+    transition: 0.5s;
+}
+
+.play-pause-btn:hover {
+    box-shadow: 0px 0px 50px -17px rgb(255, 240, 221);
+}
+
+
+/* Sample section top text h3 styling */
+.sample-top-text h3 {
+    color: var(--white);
+}
+
+/* Sample section top text h2 styling */
+.sample-top-text h2 {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.sample-top-wrapper a {
+    font-size: 90%;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Sample section before after wrapper styling */
+.before-after-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    border-radius: 10px;
+    border: solid 0px;
+}
+
+@media (max-width: 850px) {
+    .before-after-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Sample section before padding left right styling */
+.before-after-wrapper span {
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.33);
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+    text-decoration: underline;
+}
+
+/* Sample section before after padding styling */
+.before-after-padding {
+    padding: 0 40px;
+}
+
+
+
+/* Sample section before wrapper styling */
+.before-after-inside-wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    border-radius: 10px;    
+    background-image: url('/images/Before\ Background\ Image2.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+}
+
+@media (max-width: 850px) {
+    .before-after-inside-wrapper {
+        width: 100%;
+    }
+}
+
+/* Sample section before wrapper fixed background img styling */
+.before-video-wrapper {
+    padding: 0 40px;
+}
+
+@media (max-width: 1020px) {
+    .before-video-wrapper {
+        padding: 0 20px;
+    } 
+}
+
+
+
+.after-video-wrapper {
+    padding: 0 40px;
+}
+
+@media (max-width: 1020px) {
+    .after-video-wrapper {
+        padding: 0 20px;
+    } 
+}
+
+.before-video-wrapper video {
+   width: 100%;
+   border: #FFC982 solid 2px;
+   border-radius: 20px;
+   box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+    
+}
+
+.after-video-wrapper video {
+    width: 100%;
+    border: #ffffff solid 2px;
+    border-radius: 20px;
+     
+ }
+
+/* Sample section before text wrapper styling */
+.before-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 30px;
+    width: 100%;
+    border-top: solid 2px var(--gold);
+    border-bottom: solid 2px var(--gold);
+    text-align: center;
+    background-color: var(--gold);
+}
+
+.before-text-wrapper + p {
+    color: #444444;
+    background-color: #FFC982;
+    text-align: center;
+    width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.after-text-wrapper + p {
+    color: #444444;
+    background-color: #ffffff;
+    text-align: center;
+    width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.before-text-wrapper span {
+    text-shadow: none;
+}
+
+/* Sample section before icon styling */
+.sample-section-before-icon {
+    width: 20%;
+    border: solid 2px var(--gold);
+    background-color: var(--gold);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+
+
+/* Sample section after text wrapper styling */
+.after-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 30px;
+    width: 100%;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    text-align: center;
+    background-color: white;
+}
+
+/* Sample section after span styling */
+.before-after-wrapper span {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    font-weight: 700;
+    color: rgb(63, 63, 63);
+    text-decoration: underline;
+}
+
+/* Sample section after icon styling */
+.sample-section-after-icon {
+    width: 30%;
+    border: solid 2px white;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Sample section after icon wrapper styling */
+.after-icon-wrapper {
+    display: flex;
+    width: 70%;
+    gap: 20px;
+    align-self: center;
+    justify-content: space-between;
+}
+
+/* Sample section 2nd after icon styling */
+.after-icon-wrapper img:nth-child(2) {
+    background-color: #444444;
+    border: #444444 solid 2px;
+    width: 50px; width: 50px;
+    align-self: center;
+    
+}
+
+
+/******************************************
+/* WHY WORK WITH US SECTION
+/*******************************************/   
+/* Why work with us section styling */
+.why-work-with-us {
+    padding: 50px 0;
+    background-color: #FFC982;
+    box-shadow: 0px 0px 65px -37px rgba(0,0,0,0.75);
+}
+
+/* Why work with us container styling */
+.why-work-with-us .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Why work with us text wrapper styling */
+.why-work-with-us-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #444444;
+}
+
+/* Why work with us card sub text styling */
+.why-work-with-us-text-wrapper span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Why work with us sub text borders styling */
+.why-work-with-us-text-wrapper span::before {
+    content: " ";
+    align-items: center;
+    border-bottom: #444444 solid 2px;
+    width: 30px;
+    height: 2px;
+    margin: 10px;
+}
+
+.why-work-with-us-text-wrapper span::after {
+    content: " ";
+    align-items: center;
+    border-bottom: #444444 solid 2px;
+    width: 30px;
+    height: 2px;
+    margin: 10px;
+}
+
+/* Why work with us card wrapper styling */
+
+@media (min-width: 851px) {
+    .why-work-with-us-card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .why-work-with-us-card-wrapper {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+    }
+}
+
+/* Why work with us card styling */
+.why-work-with-us-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+    background: white;
+    border: solid 0px white;
+    border-radius: 10px;
+    transition: 0.5s;
+
+    
+}
+.why-work-with-us-card-1:hover, .why-work-with-us-card-2:hover, .why-work-with-us-card-3:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    z-index: 2;
+}
+
+/* @media (max-width: 850px) {
+    .why-work-with-us-card {
+        width: 70%;
+    }
+} */
+
+/* Why work with us section styling */
+.why-work-with-us-card-text-wrapper {
+    background-color: white;
+    padding: 40px;
+    border-bottom: solid 0px white;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+/* Why work with us card text wrapper styling */
+.why-work-with-us-card-text-wrapper span {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+/* Why work with us img styling */
+.why-work-with-us-card img {
+    width: 100%;
+    max-height: 200px;
+    display: block;
+    object-fit: cover;
+    border-top: solid 0px white;
+    border-radius: 10px 10px 0 0 ;
+}
+
+@media (max-width: 850px) {
+    .why-work-with-us-card img {
+        max-height: 400px;
+    }
+}
+
+/******************************************
+/* CTA SECTION
+/*******************************************/   
+/* Cta section styling */
+.cta {
+    padding: 120px 0;
+    background-image: url('/images/Get\ Started\ Section\ Background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Cta text wrapper styling */
+.cta-text-wrapper {
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Cta text wrapper h2 styling */
+.cta-text-wrapper h2 {
+    margin-bottom: 15px;
+}
+
+/* Cta text wrapper sub text styling */
+.cta-text-wrapper span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Cta sub text dash styling */
+.cta-text-wrapper span::before{
+    content: " ";
+    align-items: center;
+    border-bottom: #ffffff solid 2px;
+    width: 30px;
+    height: 2px;
+    margin: 10px;
+}
+
+.cta-text-wrapper span:after {
+    content: " ";
+    align-items: center;
+    border-bottom: #ffffff solid 2px;
+    width: 30px;
+    height: 2px;
+    margin: 10px;
+}
+
+/* Cta typeform styling */
+.typeform {
+    box-shadow: 0px 0px 39px -15px rgba(0,0,0,0.83);
+}
+
+
+/******************************************
+/* FAQ SECTION
+/*******************************************/  
+/* Faq section styling */
+.faq {
+    padding: 150px 20px;
+    border-top: #FFC982 solid 8px;
+    border-bottom: #FFC982 solid 8px;
+    color: #444444;
+    /* box-shadow: 0px 0px 65px -37px rgba(0,0,0,0.75); */
+}
+
+/* Faq h2 styling */
+.faq h2 {
+    background-color: white;
+    box-shadow: 0px 0px 65px -37px rgba(0,0,0,0.75);
+}
+
+/* Faq wrapper styling */
+.faq-wrapper {
+    align-self: flex-end;
+    display: flex;
+    max-width: 1000px; 
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: 70px auto 0 auto;
+    box-shadow: 0px 0px 39px -10px rgb(249, 191, 121);
+}
+
+/* Faq question answer wrapper styling */
+.faq-question-answer-wrapper {
+    border-bottom: #444444 solid 3px;
+    padding-bottom: 7px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Faq question(s) styling */
+.faq-question-1, .faq-question-2, .faq-question-3, .faq-question-4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+    cursor: pointer;
+    
+}
+
+/* Faq question(s) img styling*/
+.faq-question-1 img, .faq-question-2 img, .faq-question-3 img, .faq-question-4 img {
+    width: 14px;
+    height: 14px;
+    align-items: self-start;
+    transition: transform 0.5s;
+}
+
+.faq-caret {
+    margin-left: 30px;
+}
+
+/* Faq answer(s) default styling*/
+.faq-answer-1, .faq-answer-2, .faq-answer-3, .faq-answer-4 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/* Faq answer active */
+.faq-answer-active {
+    max-height: 200px;
+    transition: max-height 0.5s ease;
+}
+
+/* Rotate caret */
+.rotate-180 {
+    transform: rotate(180deg);
+    transition: rotate 0.5s;
+}
+
+/******************************************
+/* FOOTER
+/*******************************************/  
+/* Footer styling */
+footer  {
+    color: #FFFFFF;
+    padding: 70px 0 15px 0;
+    background-color: rgb(26, 26, 26);
+}
+
+/* Footer container styling */
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+    footer .container {
+        display: flex;
+        max-width: 500px;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.footer-about-us {
+    max-width: 300px;
+}
+
+
+@media (max-width: 700px) {
+    .footer-column-wrapper {
+        display: flex;
+        width: 200px;
+    }
+}
+
+
+
+
+@media (max-width: 700px) {
+    .footer-about-us {
+        max-width: 500px;
+    }
+}
+
+/* Footer link styling */
+footer a {
+    align-self: flex-start;
+    display: inline-block;
+    color: #ffffff;
+    transition: color 0.5s;
+}
+
+footer a:hover {
+    color: #FFC982;
+    transition: color 0.5s;
+}
+
+/* Footer column content styling */
+.footer-column-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Footer bottom content text styling */
+.footer-content-bottom span {
+    display: block;
+    text-align: center;
+}
+/******************************************
+/* UTILITY CLASSES
+/*******************************************/   
+
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid #FFC982;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+
+/* Goold Button styling */
+.gold-btn-small {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #FFC982;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+}
+
+.gold-btn-small:hover {
+    box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+    background-color: #ffc982b4;
+    transition: 0.5s;
+}
+
+.gold-btn-large {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #FFC982;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+}
+
+.gold-btn-large:hover {
+    box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+    background-color: #ffc982b4;
+    transition: 0.5s;
+}
+.black-btn {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #444444;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+
+}
+
+
+
+.black-btn:hover {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #7f7f7f;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+    box-shadow: 0px 0px 50px -17px rgba(0,0,0,0.75);
+
+}
+
+
+.white-btn {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: white;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+}
+
+.white-btn:hover {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #fbdbb1;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: 0.5s;
+    align-self: center;
+    box-shadow: 0px 0px 50px -17px rgba(255, 255, 255, 0.75);
+}
+
+
+
+.btn:hover {
+    display: inline-block;
+    border: 2px solid #FFC982;
+    background-color: #ffc982b1;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+
+/* Hero button styling */
+.hero-content-wrapper .btn {
+    margin-top: 20px;
+    background-color: #ffc9823a;
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+.hero-content-wrapper .btn:hover {
+    margin-top: 20px;
+    display: inline-block;
+    border: 2px solid #FFC982;
+    background-color: #FFC982;
+    color: #444444;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+
+
+/* Gold text */
+.gold-text {
+    color: #FFC982;
+}
+
+
+

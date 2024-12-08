@@ -66,6 +66,10 @@ html {
     padding: 0 20px;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /******************************************
 /* TYPOGRAPHY
 /*******************************************/
@@ -209,12 +213,12 @@ nav ul li:first-child {
     text-align: center;
     max-height: 200px;
     padding-bottom: 20px !important;
-    position: sticky;
-    background-color: rgb(26, 26, 26);
+    position: absolute;
     width: 100%;
     padding: 0 20px;
     overflow: hidden;
     transition: max-height 0.5s ease;
+    background-color: rgba(26, 26, 26, 0.832);
 }
 
 .full-screen-mobile-menu-wrapper.full-screen-mobile-menu-wrapper-hidden {
@@ -225,8 +229,7 @@ nav ul li:first-child {
     text-align: center;
     max-height: 0px;
     padding-bottom: 0 !important;
-    position: sticky;
-    background-color: rgb(26, 26, 26);
+    position: absolute;
     width: 100%;
     padding: 0 20px;
     overflow: hidden;
@@ -299,7 +302,6 @@ li a:hover {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    position: relative;
     width: 100vw;
     min-height: 700px;
 }
@@ -364,7 +366,7 @@ li a:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     z-index: -2;
     object-fit: cover;
@@ -480,7 +482,7 @@ li a:hover {
         flex-direction: column;
         justify-content: space-between;
         gap: 25px;
-        width: 80%;
+        width: 100%;
         padding: 0 20px;
     }
 }

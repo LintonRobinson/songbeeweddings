@@ -74,7 +74,10 @@ document.querySelector('.faq-question-4').addEventListener('click', () => {
 // Hamburger Menu Functionality
 document.querySelector('.hamburger-icon').addEventListener('click',() => {
     document.querySelector('.full-screen-mobile-menu-wrapper').classList.toggle('full-screen-mobile-menu-wrapper-hidden')
-    header.classList.toggle('headerSolidBackground');
+    if (window.scrollY < 50) {
+        header.classList.toggle('headerSolidBackground');
+    }
+    
 
 })
 
